@@ -1,0 +1,25 @@
+{
+    "name": "lorikeet",
+    "displayName": "Lorikeet",
+    "description": "Syntax highlighting for lorikeet lang",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.39.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "lorikeet",
+            "aliases": ["Lorikeet", "lorikeet"],
+            "extensions": [".lk"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "lorikeet",
+            "scopeName": "source.lk",
+            "path": "./syntaxes/lorikeet.tmLanguage.json"
+        }]
+    }
+}
