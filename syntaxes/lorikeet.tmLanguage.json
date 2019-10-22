@@ -6,9 +6,7 @@
 			"include": "#line_comment"
 		},
 		{
-			"comment": "Double-quote string literal",
-			"name": "string.quoted.double.lorikeet",
-			"match": "b?\".*\""
+			"include": "#string_literal"
 		},
 		{
 			"comment": "Integer literal (decimal)",
@@ -28,7 +26,7 @@
 		{
 			"comment": "Keyword",
 			"name": "keyword.other.lorikeet",
-			"match": "\\b(let|fn)\\b"
+			"match": "\\b(let|fn|mut)\\b"
 		},
 		{
 			"comment": "Miscellaneous operator",
@@ -107,6 +105,21 @@
 			"name": "comment.line.double-slash.lorikeet",
 			"begin": "//",
 			"end": "$"
+		},
+		"escaped_character": {
+			"name": "constant.character.escape.rust",
+			"match": "\\\\(x[0-9A-Fa-f]{2}|[0-2][0-7]{0,2}|3[0-6][0-7]?|37[0-7]?|[4-7][0-7]?|.)"
+		},
+		"string_literal": {
+			"comment": "Double-quote string literal",
+			"name": "string.quoted.double.lorikeet",
+			"begin": "b?\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"include": "#escaped_character"
+				}
+			]
 		}
 	}
 }
